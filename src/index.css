@@ -4,63 +4,58 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 97.3%; /* PRD #F8F8F8 */
+    --foreground: 0 0% 10.2%; /* PRD #1A1A1A */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* PRD #FFFFFF (surface) */
+    --card-foreground: 0 0% 10.2%; /* PRD #1A1A1A (primaryText) */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* PRD #FFFFFF (surface) */
+    --popover-foreground: 0 0% 10.2%; /* PRD #1A1A1A (primaryText) */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 221.3 82.9% 53.3%; /* PRD #2563EB (accentBlue) */
+    --primary-foreground: 210 40% 98%; /* Existing white, good contrast for accentBlue */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 17.4% 92.4%; /* PRD #E8ECEF (sidebar color, used as light gray bg) */
+    --secondary-foreground: 0 0% 45.1%; /* PRD #737373 (secondaryText) */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 17.4% 92.4%; /* PRD #E8ECEF (sidebar color, used as light gray bg) */
+    --muted-foreground: 0 0% 45.1%; /* PRD #737373 (secondaryText) */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 17.4% 92.4%; /* PRD #E8ECEF (sidebar color, for generic accent background) */
+    --accent-foreground: 221.3 82.9% 53.3%; /* PRD #2563EB (accentBlue for text on light accent bg) */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%; /* PRD #EF4444 (accentRed) */
+    --destructive-foreground: 210 40% 98%; /* Existing white, good contrast for accentRed */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 14.3% 90.6%; /* PRD #E5E7EB */
+    --input: 220 14.3% 90.6%; /* PRD #E5E7EB */
+    --ring: 221.3 82.9% 53.3%; /* PRD #2563EB (accentBlue for focus) */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Existing, aligns with PRD 'rounded-md' via calc() in tailwind.config */
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar specific colors from PRD and conventions */
+    --sidebar-background: 210 17.4% 92.4%; /* PRD #E8ECEF (sidebar) */
+    --sidebar-foreground: 0 0% 10.2%; /* PRD #1A1A1A (primaryText) */
+    --sidebar-primary: 221.3 82.9% 53.3%; /* PRD #2563EB (accentBlue, for primary interactive elements in sidebar) */
+    --sidebar-primary-foreground: 210 40% 98%; /* White text on accentBlue background */
+    --sidebar-accent: 221.3 82.9% 94%; /* Light blue background for active/hover nav item (derived from accentBlue) */
+    --sidebar-accent-foreground: 221.3 82.9% 53.3%; /* PRD #2563EB (accentBlue, for text on active/hover nav item) */
+    --sidebar-border: 220 14.3% 90.6%; /* PRD #E5E7EB (border) */
+    --sidebar-ring: 221.3 82.9% 53.3%; /* PRD #2563EB (accentBlue for focus) */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 10.2%; /* Inverted from light foreground */
+    --foreground: 0 0% 97.3%; /* Inverted from light background */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 10.2%; /* Inverted */
+    --card-foreground: 0 0% 97.3%; /* Inverted */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 10.2%; /* Inverted */
+    --popover-foreground: 0 0% 97.3%; /* Inverted */
 
+    /* Dark theme specific colors - keeping existing unless directly mapped from PRD light changes */
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
@@ -76,9 +71,11 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 217.2 32.6% 17.5%; /* Existing dark border */
+    --input: 217.2 32.6% 17.5%; /* Existing dark input */
     --ring: 212.7 26.8% 83.9%;
+
+    /* Dark Sidebar colors - keeping existing specific dark theme values */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -97,5 +94,8 @@
 
   body {
     @apply bg-background text-foreground;
+    /* font-family is set via Tailwind config's theme.extend.fontFamily.sans */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
